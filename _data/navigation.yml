@@ -1,4 +1,4 @@
-- name: Start
+- name: Welcome
   link: /welcome/
   new_window: false
   highlight: false
