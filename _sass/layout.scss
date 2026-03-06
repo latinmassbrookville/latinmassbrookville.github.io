@@ -34,10 +34,23 @@ header {
 		}
 	}
 
-	.company-name a {
-		font-size: 1.25em;
-		font-weight: 500;
-		color: $brand-secondary;
+	.company-name { 
+		font-size: 1.5em;
+
+		a {
+			position: relative;
+
+			img {
+				position: absolute;
+			}
+
+			span {
+				margin-left: 60px;
+				font-size: 1.25em;
+				font-weight: 500;
+				color: $brand-secondary;
+			}
+		}
 	}
 }
 
