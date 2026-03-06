@@ -214,8 +214,9 @@ blockquote:before {
 		justify-content: space-evenly;
 		
 		> div {
-			color: rgba(192, 57, 43,0.7); 
-			height: 3em;
+			color: rgba(192, 57, 43, 0.7); 
+			padding: 1em 0;
+			text-transform: uppercase;
 		}
 	}
 
@@ -225,7 +226,7 @@ blockquote:before {
 		justify-content: space-evenly;
 
 		> div {
-			color: rgb(108 117 125); 
+			color: rgb(108, 117, 125); 
 			height: 5em;
 			font-size: .85em;
 		}
