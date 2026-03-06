@@ -195,17 +195,39 @@ blockquote:before {
 	width: 100%;
 
 	.calendar-header {
-		background-color: rgb(192, 57, 43); 
+		background-color: $brand-danger; 
 		height: 70px;
+		color: white;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		h2 {
+			margin-bottom: 0;
+		}
 	}
 
 	.calendar-weekdays {
 		width: 100%;
 		display: flex;
+		justify-content: space-evenly;
+		
+		> div {
+			color: $brand-danger; 
+			height: 5em;
+		}
 	}
 
 	.calendar-content {
 		width: 100%;
 		display: flex;
+		justify-content: space-evenly;
+
+		> div {
+			color: $brand-muted; 
+			height: 5em;
+			font-size: .85em;
+		}
 	}
 }
