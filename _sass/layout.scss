@@ -190,3 +190,22 @@ blockquote:before {
 		font-size: 1.25rem;
 	}
 }
+
+.calendar {
+	width: 100%;
+
+	.calendar-header {
+		background-color: rgb(192, 57, 43); 
+		height: 70px;
+	}
+
+	.calendar-weekdays {
+		width: 100%;
+		display: flex;
+	}
+
+	.calendar-content {
+		width: 100%;
+		display: flex;
+	}
+}
