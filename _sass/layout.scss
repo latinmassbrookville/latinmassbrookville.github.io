@@ -34,18 +34,10 @@ header {
 		}
 	}
 
-	.company-name {
-		font-size: 1.7em;
-		line-height: 0;
-
-		a {
-			display: inline-block;
-		}
-
-		img {
-			display: block;
-			width: auto;
-		}
+	.company-name a {
+		font-size: 1.25em;
+		font-weight: 500;
+		color: $brand-secondary;
 	}
 }
 
