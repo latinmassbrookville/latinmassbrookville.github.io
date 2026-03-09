@@ -17,7 +17,8 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 			<div class="text editable">
 				<div class="calendar">
 					<div class="calendar-header">
-						<h2>MASS TIMES</h1>
+						<h2>MASS TIMES</h2>
+						<small>*Confession 30 minutes prior to each Mass</small>
 					</div>
 					<div class="calendar-body">
 						<div class="calendar-weekdays">
@@ -59,14 +60,58 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 		</div>
 	</section>
 
-	<section>
+	<section class="d-none"></section>
+	<section class="testimonial">
 		<div class="container flex">
-			<div class="text editable">
-				<h2>How can I <strong>forecast</strong> the next 90 days?</h2>
-				<p>Hydra learns your business. By analyzing your sales data, Hydra optimizes your sales process and show you where you should be spending your resources.</p>
+			<div class="text text-flex-center">
+				<h2 class="mb-0">Bulletins</h2>
 			</div>
 			<div class="image">
-				<img src="{{ site.baseurl }}/images/dashboard.png" alt="Screenshot" class="screenshot editable" />
+				<div>
+					{% assign bulletins = site.static_files | where: "bulletin", true  | reverse %}
+					{% for bulletin in bulletins %}
+						{% assign bulletinParts = bulletin.basename | split: "-" %}
+						<a href="{{bulletin.path}}" class="bulletin">
+							{% if bulletinParts[1] == "01" %}
+								<span class="bulletin-head">JAN</span>
+							{% endif %}
+							{% if bulletinParts[1] == "02" %}
+								<span class="bulletin-head">FEB</span>
+							{% endif %}
+							{% if bulletinParts[1] == "03" %}
+								<span class="bulletin-head">MAR</span>
+							{% endif %}
+							{% if bulletinParts[1] == "04" %}
+								<span class="bulletin-head">APR</span>
+							{% endif %}
+							{% if bulletinParts[1] == "05" %}
+								<span class="bulletin-head">MAY</span>
+							{% endif %}
+							{% if bulletinParts[1] == "06" %}
+								<span class="bulletin-head">JUN</span>
+							{% endif %}
+							{% if bulletinParts[1] == "07" %}
+								<span class="bulletin-head">JUL</span>
+							{% endif %}
+							{% if bulletinParts[1] == "08" %}
+								<span class="bulletin-head">AUG</span>
+							{% endif %}
+							{% if bulletinParts[1] == "09" %}
+								<span class="bulletin-head">SEP</span>
+							{% endif %}
+							{% if bulletinParts[1] == "10" %}
+								<span class="bulletin-head">OCT</span>
+							{% endif %}
+							{% if bulletinParts[1] == "11" %}
+								<span class="bulletin-head">NOV</span>
+							{% endif %}
+							{% if bulletinParts[1] == "12" %}
+								<span class="bulletin-head">DEC</span>
+							{% endif %}
+							<span class="bulletin-body">{{ bulletinParts[2] }}</span>
+						</a>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</section>

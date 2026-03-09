@@ -62,6 +62,11 @@ defaults:
       path: "contact.html"
     values:
       full_width: true
+  - scope:
+      path: "bulletins"
+    values:
+      bulletin: true
+    sort_by: lesson
 
 jekyll-archives:
   enabled:
