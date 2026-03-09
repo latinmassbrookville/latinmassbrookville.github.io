@@ -68,8 +68,8 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 			</div>
 			<div class="image">
 				<div>
-					{% assign bulletins = site.static_files | where: "bulletin", true  | reverse %}
-					{% for bulletin in bulletins %}
+					{% assign bulletins = site.static_files | where: "bulletin", true %}
+					{% for bulletin in bulletins | sort: "path" | reverse %}
 						{% assign bulletinParts = bulletin.basename | split: "-" %}
 						<a href="{{bulletin.path}}" class="bulletin">
 							{% if bulletinParts[1] == "01" %}
