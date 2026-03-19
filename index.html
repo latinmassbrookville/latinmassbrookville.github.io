@@ -67,11 +67,12 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 				<h2 class="mb-0">Bulletins</h2>
 			</div>
 			<div class="image">
-				<div>
-					{% assign bulletins = site.static_files | where: "bulletin", true %}
-					{% for bulletin in bulletins | sort: "path" | reverse %}
+				<div class="list-group flex-column-reverse">
+				{% assign bulletins = site.static_files | where: "bulletin", true %}
+					{% for bulletin in bulletins | sort: "path" %}
 						{% assign bulletinParts = bulletin.basename | split: "-" %}
-						<a href="{{bulletin.path}}" class="bulletin">
+						<a href="{{bulletin.path}}" class="bulletin list-group-item list-group-item-action">
+							<img src="images/pdf-file-icon.svg" />
 							{% if bulletinParts[1] == "01" %}
 								<span class="bulletin-head">JAN</span>
 							{% endif %}
@@ -108,7 +109,7 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 							{% if bulletinParts[1] == "12" %}
 								<span class="bulletin-head">DEC</span>
 							{% endif %}
-							<span class="bulletin-body">{{ bulletinParts[2] }}</span>
+							<span class="bulletin-body"> {{ bulletinParts[2] }}</span>
 						</a>
 					{% endfor %}
 				</div>
