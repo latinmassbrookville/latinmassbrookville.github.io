@@ -66,7 +66,10 @@ defaults:
       path: "bulletins"
     values:
       bulletin: true
-    sort_by: lesson
+  - scope:
+      path: "photos"
+    values:
+      is_photo: true
 
 jekyll-archives:
   enabled:

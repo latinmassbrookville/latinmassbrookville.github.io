@@ -12,3 +12,7 @@ $desktop: "(min-width: 768px)";
 .text-gold {
     color: $brand-secondary;
 }
+.text-gold-dark {
+    @extend .text-gold;
+    filter: brightness(80%);
+}
