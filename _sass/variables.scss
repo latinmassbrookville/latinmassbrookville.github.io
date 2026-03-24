@@ -16,3 +16,6 @@ $desktop: "(min-width: 768px)";
     @extend .text-gold;
     filter: brightness(80%);
 }
+.text-brand {
+    color: $brand-color;
+}
