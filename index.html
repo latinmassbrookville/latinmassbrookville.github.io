@@ -126,7 +126,7 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 				{% assign photos = site.static_files | where: "is_photo", true %}
 				{% for photo in photos %}
 					<figure class="gallery-strips-item">
-						<img src="{{photo.path}}" class="litebokz" />
+						<img src="{{photo.path}}" class="glightbox" />
 					</figure>	
 				{% endfor %}
 			</div>
@@ -246,4 +246,3 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 	}, 500);
 	});
 </script>
-<script defer src="https://litebokz.github.io/litebokz/litebokz.js"></script>

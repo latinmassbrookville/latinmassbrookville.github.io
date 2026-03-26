@@ -1,5 +1,6 @@
 $brand-color: #002e5d;
 $brand-secondary: #ffc442;
+$brand-secondary-dark: #cc9d36;
 $secondary-brand-color: #002e5d;
 $middle-gradient-color: mix($brand-color, $secondary-brand-color, 95%);
 
@@ -10,12 +11,57 @@ $mid-point: "(min-width: 620px)";
 $desktop: "(min-width: 768px)";
 
 .text-gold {
-    color: $brand-secondary;
+    color: $brand-secondary !important;
+}
+.bg-gold {
+    background-color: $brand-secondary !important;
+}
+.border-gold {
+    border-color: $brand-secondary !important;
 }
 .text-gold-dark {
-    @extend .text-gold;
-    filter: brightness(80%);
+    color: $brand-secondary-dark !important;
+}
+.bg-gold-dark {
+    background-color: $brand-secondary-dark !important;
+}
+.border-gold-dark {
+    border-color: $brand-secondary-dark !important;
 }
 .text-brand {
-    color: $brand-color;
+    color: $brand-color !important;
+}
+.bg-brand {
+    background-color: $brand-color !important;
+}
+.border-brand {
+    border-color: $brand-color !important;
+}
+
+.btn-brand { 
+    text-decoration: none !important;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #003b77;
+    --bs-btn-border-color: #003b77;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #002144;
+    --bs-btn-hover-border-color: #002144;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #002144;
+    --bs-btn-active-border-color: #00152a;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #003b77;
+    --bs-btn-disabled-border-color: #003b77;
+}
+
+.border-bottom-1 {
+    border-bottom: solid 1px;
+}
+.border-bottom-2 {
+    border-bottom: solid 2px;
+}
+.border-bottom-gold-dark {
+    border-bottom-color: $brand-secondary-dark;
 }

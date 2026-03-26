@@ -2,8 +2,12 @@
   link: /welcome/
   new_window: false
   highlight: false
-- name: About | Contact
+- name: About
   link: /about/
+  new_window: false
+  highlight: false
+- name: Sacred Music
+  link: /sacred-music/
   new_window: false
   highlight: false
 - name: More

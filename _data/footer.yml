@@ -3,7 +3,9 @@
     link: /
   - name: Welcome
     link: /welcome/
-  - name: About | Contact
+  - name: About
     link: /about/
+  - name: Sacred Music
+    link: /sacred-music/
   - name: More
     link: /news/
