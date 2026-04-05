@@ -367,51 +367,21 @@ featured: true
     <div class="col-3"></div>
     <div class="col-lg-6 col-12">
 
-
-      <h4 class="text-gold-dark text-center mt-5">Adoramus Te Christe</h4>
-      
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Soprano</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Adoramus Te Christe Soprano.wav" type="audio/wav"></audio>
-      </span>
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Alto</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Adoramus Te Christe Alto.wav" type="audio/wav"></audio>
-      </span>
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Tenor</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Adoramus Te Christe Tenor.wav" type="audio/wav"></audio>
-      </span>
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Bass</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Adoramus Te Christe Bass.wav" type="audio/wav"></audio>
-      </span>
-      
-
-      <h4 class="text-gold-dark text-center mt-5">Alleluia (Purcell)</h4>
-      
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Soprano</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Alleluia Soprano.wav" type="audio/wav"></audio>
-      </span>
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Alto</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Alleluia Alto.wav" type="audio/wav"></audio>
-      </span>
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Tenor</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Alleluia Tenor.wav" type="audio/wav"></audio>
-      </span>
-      <span class="d-flex align-items-center justify-content-between py-1">
-        <span class="ms-3 me-2">Bass</span>
-        <audio controls preload="metadata"><source src="{{ site.baseurl }}/music/Alleluia Bass.wav" type="audio/wav"></audio>
-      </span>
-      
+      {% assign audioPolyphony = site.static_files | where: "genre", "polyphony" %}
+        {% assign categories = audioPolyphony | group_by_exp: "item", "item.basename | split: ' - ' | first" %}
+        {% for cat in categories %}
+          <h4 class="text-gold-dark text-center mt-5">{{cat.name}}</h4>
+					{% for aud in cat.items %}
+            <span class="d-flex align-items-center justify-content-between py-1">
+            <span class="ms-3 me-2">{{ aud.basename | split: " - " | last }}</span>
+            <audio controls preload="metadata"><source src="{{ aud.path }}"></audio>
+          </span>
+          {% endfor %}
+				{% endfor %}
 
     </div>
     <div class="col-3"></div>
 </div>
-
 
 
 <h3 id="gregorian-chant" class="m-5 py-3 fw-bold text-center text-brand border-bottom-2">Gregorian Chant</h3>

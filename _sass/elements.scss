@@ -60,3 +60,18 @@ p {
 .xsmall {
 	font-size: 0.75rem;
 }
+
+.glightbox-container {
+
+    &.audio {
+
+        .gslide-inline {
+            background: none !important;
+            box-shadow: none !important;
+
+            .ginlined-content {
+                background: none !important;
+            }
+        }
+    }
+}

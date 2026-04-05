@@ -70,6 +70,11 @@ defaults:
       path: "photos"
     values:
       is_photo: true
+  - scope:
+      path: "music/polyphony/*"
+    values:
+      music: true
+      genre: "polyphony"
 
 jekyll-archives:
   enabled:
