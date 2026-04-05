@@ -75,6 +75,11 @@ defaults:
     values:
       music: true
       genre: "polyphony"
+  - scope:
+      path: "music/mass/*"
+    values:
+      music: true
+      genre: "mass"
 
 jekyll-archives:
   enabled:
