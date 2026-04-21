@@ -70,49 +70,55 @@ description: Welcome to the Oratory of Saints Philomena and Cecilia, an Apostola
 				<h2 class="mb-0 fw-bolder text-brand">Bulletins</h2>
 			</div>
 			<div class="image">
-				<div class="list-group flex-column-reverse">
-				{% assign bulletins = site.static_files | where: "bulletin", true %}
-					{% for bulletin in bulletins | sort: "path" %}
+				<div class="list-group">
+				{% assign bulletins = site.static_files | where: "bulletin", true | sort: "path" %}
+					{% for bulletin in bulletins reversed %}
 						{% assign bulletinParts = bulletin.basename | split: "-" %}
-						<a href="{{bulletin.path}}" class="bulletin list-group-item list-group-item-action">
-							<img src="images/pdf-file-icon.svg" />
-							{% if bulletinParts[1] == "01" %}
-								<span class="bulletin-head">JAN</span>
-							{% endif %}
-							{% if bulletinParts[1] == "02" %}
-								<span class="bulletin-head">FEB</span>
-							{% endif %}
-							{% if bulletinParts[1] == "03" %}
-								<span class="bulletin-head">MAR</span>
-							{% endif %}
-							{% if bulletinParts[1] == "04" %}
-								<span class="bulletin-head">APR</span>
-							{% endif %}
-							{% if bulletinParts[1] == "05" %}
-								<span class="bulletin-head">MAY</span>
-							{% endif %}
-							{% if bulletinParts[1] == "06" %}
-								<span class="bulletin-head">JUN</span>
-							{% endif %}
-							{% if bulletinParts[1] == "07" %}
-								<span class="bulletin-head">JUL</span>
-							{% endif %}
-							{% if bulletinParts[1] == "08" %}
-								<span class="bulletin-head">AUG</span>
-							{% endif %}
-							{% if bulletinParts[1] == "09" %}
-								<span class="bulletin-head">SEP</span>
-							{% endif %}
-							{% if bulletinParts[1] == "10" %}
-								<span class="bulletin-head">OCT</span>
-							{% endif %}
-							{% if bulletinParts[1] == "11" %}
-								<span class="bulletin-head">NOV</span>
-							{% endif %}
-							{% if bulletinParts[1] == "12" %}
-								<span class="bulletin-head">DEC</span>
-							{% endif %}
-							<span class="bulletin-body">&nbsp;{{ bulletinParts[2] }}</span>
+						{% assign bulletinTitle = bulletinParts | slice: 3 | join: "-" %}
+						<a href="{{bulletin.path}}" class="bulletin list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark">
+							<span>
+								<img src="images/pdf-file-icon.svg" />
+								{{bulletinTitle}}
+							</span>
+							<span class="badge text-bg-light rounded-pill">
+								{% if bulletinParts[1] == "01" %}
+									<span class="bulletin-head">JAN</span>
+								{% endif %}
+								{% if bulletinParts[1] == "02" %}
+									<span class="bulletin-head">FEB</span>
+								{% endif %}
+								{% if bulletinParts[1] == "03" %}
+									<span class="bulletin-head">MAR</span>
+								{% endif %}
+								{% if bulletinParts[1] == "04" %}
+									<span class="bulletin-head">APR</span>
+								{% endif %}
+								{% if bulletinParts[1] == "05" %}
+									<span class="bulletin-head">MAY</span>
+								{% endif %}
+								{% if bulletinParts[1] == "06" %}
+									<span class="bulletin-head">JUN</span>
+								{% endif %}
+								{% if bulletinParts[1] == "07" %}
+									<span class="bulletin-head">JUL</span>
+								{% endif %}
+								{% if bulletinParts[1] == "08" %}
+									<span class="bulletin-head">AUG</span>
+								{% endif %}
+								{% if bulletinParts[1] == "09" %}
+									<span class="bulletin-head">SEP</span>
+								{% endif %}
+								{% if bulletinParts[1] == "10" %}
+									<span class="bulletin-head">OCT</span>
+								{% endif %}
+								{% if bulletinParts[1] == "11" %}
+									<span class="bulletin-head">NOV</span>
+								{% endif %}
+								{% if bulletinParts[1] == "12" %}
+									<span class="bulletin-head">DEC</span>
+								{% endif %}
+								<span class="bulletin-body">&nbsp;{{ bulletinParts[2] }}</span>
+							</small>
 						</a>
 					{% endfor %}
 				</div>
